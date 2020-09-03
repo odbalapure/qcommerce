@@ -1,0 +1,3 @@
+include 'qcommerce'
+rootProject.name = 'ME_BUILDOUT_QCOMMERCE_ANALYTICS'
+
