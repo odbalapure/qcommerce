@@ -1,4 +1,5 @@
 
+
 package com.crio.qcommerce.assessment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +10,7 @@ import com.crio.qcommerce.contract.insights.SaleAggregate;
 import com.crio.qcommerce.contract.insights.SaleAggregateByMonth;
 import com.crio.qcommerce.contract.insights.SaleInsights;
 import com.crio.qcommerce.contract.resolver.DataProvider;
-import com.crio.qcommerce.sale.insights.SaleInsightsImpl;
+import com.crio.qcommerce.contract.insights.SaleInsightsImpl;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
