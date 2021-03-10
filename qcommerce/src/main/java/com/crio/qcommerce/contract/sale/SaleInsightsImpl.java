@@ -1,8 +1,7 @@
-package com.crio.qcommerce.contract.insights;
+package com.crio.qcommerce.contract.sale;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,6 +15,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import com.crio.qcommerce.contract.exceptions.AnalyticsException;
+import com.crio.qcommerce.contract.insights.SaleAggregate;
+import com.crio.qcommerce.contract.insights.SaleAggregateByMonth;
+import com.crio.qcommerce.contract.insights.SaleInsights;
 import com.crio.qcommerce.contract.resolver.DataProvider;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.crio.qcommerce.contract.dto.Amazon;

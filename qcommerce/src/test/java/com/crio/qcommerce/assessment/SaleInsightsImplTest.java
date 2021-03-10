@@ -9,7 +9,7 @@ import com.crio.qcommerce.contract.exceptions.AnalyticsException;
 import com.crio.qcommerce.contract.insights.SaleAggregate;
 import com.crio.qcommerce.contract.insights.SaleAggregateByMonth;
 import com.crio.qcommerce.contract.insights.SaleInsights;
-import com.crio.qcommerce.contract.insights.SaleInsightsImpl;
+import com.crio.qcommerce.contract.sale.SaleInsightsImpl;
 import com.crio.qcommerce.contract.resolver.DataProvider;
 import java.io.File;
 import java.io.IOException;
