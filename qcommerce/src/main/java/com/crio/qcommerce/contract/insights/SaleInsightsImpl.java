@@ -1,8 +1,12 @@
 package com.crio.qcommerce.contract.insights;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -34,9 +38,13 @@ public class SaleInsightsImpl implements SaleInsights {
 
         provider = dataProvider.getProvider();
 
+        // InputStream inputStream = new FileInputStream(targetFile); 				
+        // Reader fileReader = new InputStreamReader(inputStream, "UTF-8");
         // analytics for amazon
         if (provider.equalsIgnoreCase("amazon")) {
-            List<Amazon> amazonBeans = new CsvToBeanBuilder<Amazon>(new FileReader(file)).withType(Amazon.class).build()
+            InputStream inputStream = new FileInputStream(file); 
+            Reader fileReader = new InputStreamReader(inputStream, "UTF-8");
+            List<Amazon> amazonBeans = new CsvToBeanBuilder<Amazon>(fileReader).withType(Amazon.class).build()
                     .parse();
 
             for (Amazon amazon : amazonBeans) {
@@ -69,7 +77,9 @@ public class SaleInsightsImpl implements SaleInsights {
         // analytics for flipkart
         else if (provider.equalsIgnoreCase("flipkart")) {
             totalSales = 0.0;
-            List<Flipkart> flipkartBeans = new CsvToBeanBuilder<Flipkart>(new FileReader(file)).withType(Flipkart.class)
+            InputStream inputStream = new FileInputStream(file); 
+            Reader fileReader = new InputStreamReader(inputStream, "UTF-8");
+            List<Flipkart> flipkartBeans = new CsvToBeanBuilder<Flipkart>(fileReader).withType(Flipkart.class)
                     .build().parse();
 
             for (Flipkart flipkart : flipkartBeans) {
@@ -96,7 +106,9 @@ public class SaleInsightsImpl implements SaleInsights {
         }
         // analytics for ebay
         else if (provider.equalsIgnoreCase("ebay")) {
-            List<Ebay> ebayBeans = new CsvToBeanBuilder<Ebay>(new FileReader(file)).withType(Ebay.class).build()
+            InputStream inputStream = new FileInputStream(file); 
+            Reader fileReader = new InputStreamReader(inputStream, "UTF-8");
+            List<Ebay> ebayBeans = new CsvToBeanBuilder<Ebay>(fileReader).withType(Ebay.class).build()
                     .parse();
 
             for (Ebay ebay : ebayBeans) {
